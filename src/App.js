@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// import Login from './Login';
+import {Route, Routes} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Navbar } from 'react-bootstrap';
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
+import Navbarr from './components/Navbar';
+import AddReminder from './pages/AddReminder';
+import HomePage from './pages/Home';
+// import { getDatabase, ref, set } from "firebase/database";
+// import firebase from "./firebase";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbarr />
+    <Routes>
+      <Route path='/Home' element={<HomePage />} />
+      <Route path="/addreminder" element={<AddReminder />}/>
+      <Route path="/signuppage" element={<SignupPage />}/>
+      <Route path="/loginpage" element={<LoginPage />}/>
+    </Routes>
     </div>
   );
 }
